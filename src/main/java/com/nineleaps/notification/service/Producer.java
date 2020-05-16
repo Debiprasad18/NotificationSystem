@@ -13,7 +13,7 @@ public class Producer {
 
 	@Async
 	public void sendMessage(String message) {
-		System.out.println("Producing message --> "+ message);
+		System.out.println("Producing message --> " + message);
 		this.kafkaTemplate.send(TOPIC, message);
 	}
 }

@@ -16,7 +16,10 @@ public class User implements Serializable {
 	private UUID id;
 	private String name;
 	private String address;
-	private String pin;
+	private Integer pin;
+	private Boolean isAdmin;
+	private String email;
+	private String mobile;
 
 	public User() {
 	}
@@ -48,12 +51,41 @@ public class User implements Serializable {
 	public void setAddress(String address) {
 		this.address = address;
 	}
+	
+	public Boolean getIsAdmin() {
+		return isAdmin;
+	}
 
-	public String getPin() {
+	public void setIsAdmin(Boolean isAdmin) {
+		this.isAdmin = isAdmin;
+	}
+
+	public Integer getPin() {
 		return pin;
 	}
 
-	public void setPin(String pin) {
+	public void setPin(Integer pin) {
 		this.pin = pin;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	public String getMobile() {
+		return mobile;
+	}
+
+	public void setMobile(String mobile) {
+		this.mobile = mobile;
+	}
+
+	@Override
+	public String toString() {
+		return "User [id=" + id + ", name=" + name + "]";
 	}
 }

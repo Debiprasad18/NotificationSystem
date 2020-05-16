@@ -1,6 +1,7 @@
 package com.nineleaps.notification.service;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -13,10 +14,9 @@ import com.nineleaps.notification.model.User;
 public class UserService {
 
 	private final UserDAO dao;
-	
+
 	@Autowired
 	private Producer producer;
-	
 
 	@Autowired
 	public UserService(UserDAO dao) {
@@ -29,8 +29,17 @@ public class UserService {
 		producer.sendMessage("User Created.");
 		return newUser;
 	}
-	
-	public List<User> findAll(){
+
+	public List<User> findAll() {
 		return (List<User>) dao.findAll();
+	}
+	
+	/*
+	 * public List<User> findAllAdmin() { return (List<User>)
+	 * dao.findByIsAdminTrue(); }
+	 */
+
+	public User update(User user) {
+		return dao.updateUser(user.getId(), user.getIsAdmin());
 	}
 }
