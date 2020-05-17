@@ -26,7 +26,7 @@ public class UserService {
 	public User save(User user) {
 		user.setId(UUIDs.timeBased());
 		User newUser = dao.save(user);
-		producer.sendMessage("User Created.");
+		producer.sendMessage(user);
 		return newUser;
 	}
 

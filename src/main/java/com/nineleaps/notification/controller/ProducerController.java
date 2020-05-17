@@ -5,6 +5,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.nineleaps.notification.model.User;
 import com.nineleaps.notification.service.Producer;
 
 @RestController
@@ -18,6 +19,6 @@ public class ProducerController {
 
 	@PostMapping(value = "/publish")
 	public void sendMessageToKafkaTopic(@RequestParam("message") String message) {
-		this.producer.sendMessage(message);
+		this.producer.sendMessage(new User());
 	}
 }

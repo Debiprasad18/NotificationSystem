@@ -5,11 +5,11 @@ spring:
       group-id: group-id
       auto-offset-reset: earliest
       key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
-      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: com.nineleaps.notification.model.UserDeserializer
     producer:
       bootstrap-servers: localhost:9092
-      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
-      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: com.nineleaps.notification.model.UserSerializer
   data:
     cassandra:
       keyspace-name: nineleaps
