@@ -22,8 +22,8 @@ public class NotificationApplication {
 	    mailSender.setHost("smtp.gmail.com");
 	    mailSender.setPort(587);
 	     
-	    mailSender.setUsername("XXXXXXXX@gmail.com");
-	    mailSender.setPassword("XXXXXXX");
+	    mailSender.setUsername("sendtestmailnineleaps@gmail.com");
+	    mailSender.setPassword("Pass_123");
 	     
 	    Properties props = mailSender.getJavaMailProperties();
 	    props.put("mail.transport.protocol", "smtp");
